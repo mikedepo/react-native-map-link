@@ -85,8 +85,8 @@ export async function showLocation(options) {
       url = prefixes['apple-maps'];
       url = useSourceDestiny
         ? `${url}?saddr=${sourceLatLng}&daddr=${latlng}`
-        : `${url}?q=${latlng}`;
-      url += `&q=${title ? encodedTitle : 'Location'}`;
+        : `${url}?ll=${latlng}`;
+      url += `&q='Location'`;
       break;
     case 'google-maps':
       // Always using universal URL instead of URI scheme since the latter doesn't support all parameters (#155)
